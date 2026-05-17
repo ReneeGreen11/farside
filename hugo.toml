@@ -1,0 +1,46 @@
+baseURL = 'https://farsideoffringe.ca'
+locale = 'en-can'
+title = 'Far Side of Fringe'
+theme = 'PaperMod'
+
+[params.profileMode]
+  enabled = true
+  title = "Renee Green"
+  subtitle = "I am pro–informed consent. I have tested positive for freedom! Join the mailing list below. I will mindfully update you about new posts!"
+  imageUrl = "/images/profile.jpg"  # 
+  imageTitle = "Renee"       # 
+  imageWidth = 120                     # 
+  imageHeight = 120                    # 
+
+  [[params.profileMode.buttons]]
+    name = "Far Side of Fringe Blog"
+    url = "posts"
+    
+    [[params.profileMode.buttons]]
+    name = "Small World Blog"
+    url = "posts-sw"
+
+    [params]
+  comments = true
+
+
+
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/ReneeGreen11"
+    [[params.socialIcons]]
+        name = "x"
+        url = "https://x.com/xRenee0"
+    [[params.socialIcons]]
+        name = "Substack"
+        url = "https://substack.com/@xrenee0"
+    [[params.socialIcons]]
+         name = "Ko-fi"
+         url = "https://ko-fi.com/reneefarsideoffringe"
+    [[params.socialIcons]]
+         name = "Facebook"
+         url = "https://www.facebook.com/profile.php?id=100090594956620"
+
+   
+
+
