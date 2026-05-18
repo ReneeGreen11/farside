@@ -8,6 +8,7 @@
 #------------------------------------------------------------------------------
 
 # Exit on error, undefined variables, or pipe failures
+hugo --gc --minify
 set -euo pipefail
 
 build_temp_dir=""

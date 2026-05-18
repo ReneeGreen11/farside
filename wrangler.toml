@@ -1,9 +1,8 @@
-name = 'hosting-cloudflare-worker'
-compatibility_date = '2025-07-31'
-
-[build]
-command = 'chmod a+x build.sh && ./build.sh'
+name = "farsideoffringe"
+compatibility_date = "2026-05-18"
+preview_urls = true
 
 [assets]
-directory = './public'
-not_found_handling = '404-page'
+directory = "./public"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"
