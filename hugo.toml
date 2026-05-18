@@ -3,6 +3,7 @@ locale = 'en-can'
 title = 'Far Side of Fringe'
 theme = 'PaperMod'
 
+
 [params.profileMode]
   enabled = true
   title = "Renee Green"
@@ -44,3 +45,4 @@ theme = 'PaperMod'
    
 
 
+theme = 'PaperMod'
