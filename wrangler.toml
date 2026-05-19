@@ -3,6 +3,5 @@ compatibility_date = "2026-05-18"
 preview_urls = true
 
 [assets]
-directory = "./public"
-not_found_handling = "404-page"
-html_handling = "auto-trailing-slash"
+directory = './public'
+not_found_handling = '404-page'
