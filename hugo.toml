@@ -1,4 +1,5 @@
 baseURL = 'https://farsideoffringe.ca'
+uglyURLs = true
 locale = 'en-can'
 title = 'Far Side of Fringe'
 theme = 'PaperMod'
