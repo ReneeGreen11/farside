@@ -14,13 +14,14 @@ theme = 'PaperMod'
   imageWidth = 120                     # 
   imageHeight = 120                    # 
 
+
   [[params.profileMode.buttons]]
     name = "Far Side of Fringe Blog"
-    url = "/posts/"
+    url = "/posts.html"
     
     [[params.profileMode.buttons]]
     name = "Small World Blog"
-    url = "/posts-sw/"
+    url = "/posts-sw.html"
 
     [params]
   comments = true
