@@ -17,11 +17,11 @@ theme = 'PaperMod'
 
   [[params.profileMode.buttons]]
     name = "Far Side of Fringe Blog"
-    url = "/posts.html"
+    url = "/posts/index.html"
     
     [[params.profileMode.buttons]]
     name = "Small World Blog"
-    url = "/posts-sw.html"
+    url = "/posts-sw/index.html"
 
     [params]
   comments = true
