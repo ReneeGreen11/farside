@@ -17,8 +17,10 @@
         {{- else if site.Params.label.icon }}
             <img src="{{- site.Params.label.icon | absURL -}}" alt="Default Logo" height="30">
         {{- end -}}
-
+ {{/* Only show the text if we are NOT on the posts or posts-sw pages */}}
+    {{- if and (ne .Section "posts") (ne .Section "posts-sw") }}
         {{- $label_text -}}
+    {{- end }}
     </a>
     {{- end }}
 
