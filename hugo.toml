@@ -3,6 +3,7 @@ uglifyURLs = false
 locale = 'en-can'
 title = 'Far Side of Fringe'
 theme = 'PaperMod'
+relativeURLs = false
 
 
 [params.profileMode]
