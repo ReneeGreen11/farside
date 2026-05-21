@@ -1,5 +1,5 @@
 baseURL = 'https://farsideoffringe.ca'
-uglyURLs = false
+uglyURLs = true
 locale = 'en-can'
 title = 'Far Side of Fringe'
 theme = 'PaperMod'
@@ -17,11 +17,11 @@ theme = 'PaperMod'
 
   [[params.profileMode.buttons]]
     name = "Far Side of Fringe Blog"
-    url = "/posts/index.html"
+    url = "/posts"
     
     [[params.profileMode.buttons]]
     name = "Small World Blog"
-    url = "/posts-sw/index.html"
+    url = "/posts-sw"
 
     [params]
   comments = true
