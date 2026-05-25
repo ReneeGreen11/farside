@@ -10,6 +10,8 @@ I have been hard at work learning a little bit about how to make a website. I ha
 
 There are many reasons to do this, here are some of my reasons:
 
+{{< audio src="/audio/Farside_moved.mp3" caption="Listen to this track" >}}
+
 1. I live in Canada, where there are currently efforts to introduce age verification for the use of social media. Substack is social media. What this means is that access to these platforms may become increasingly restricted, with people required to complete face scans or provide identification to use them. Perhaps many will comply—I’m not sure. I hope they won’t. I also hope people begin stepping away from these platforms before such measures are even implemented.
 
 Social media has not been favourable to individual freedom, and it seems to have worsened since COVID. I am convinced that many infringements on freedom, including those during COVID, would not have been possible without the influence and reach of social media.
