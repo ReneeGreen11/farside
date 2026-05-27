@@ -24,9 +24,9 @@ relativeURLs = false
     name = "Small World Blog"
     url = "/posts-sw/"
 
-    [params]
+   [params]
   comments = true
-
+  cusdisAppId = "9755d201-34dc-4bec-a292-41085ae3418a"
 
 
    

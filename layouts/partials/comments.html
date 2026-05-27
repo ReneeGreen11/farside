@@ -1,30 +1,32 @@
-
-<div class="post-comment">
-  <div id="cusdis_thread"
-    data-host="https://cusdis.com"
-    data-app-id="9755d201-34dc-4bec-a292-41085ae3418a"
-    data-page-id="{{ .File.UniqueID }}"
-    data-page-url="{{ .Permalink }}"
-    data-page-title="{{ .Title }}"
-    data-theme="auto">
-  </div>
-</div>
-
+<div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="{{ .Site.Params.cusdisAppId }}"
+  data-page-id="{{ .Permalink }}"
+  data-page-url="{{ .Permalink }}"
+  data-page-title="{{ .Title }}"
+  data-theme="auto"
+></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <script>
-  window.addEventListener('load', () => {
-    const themeToggle = document.getElementById("theme-toggle");
-    if (themeToggle) {
-      themeToggle.addEventListener("click", () => {
-        // PaperMod adds the .dark class to the <body> when in dark mode
-        const isDark = document.body.classList.contains("dark");
-        const newTheme = isDark ? 'light' : 'dark'; // Toggle to the opposite
+document.addEventListener("DOMContentLoaded", function() {
+  const thread = document.getElementById("cusdis_thread");
+  if (!thread) return;
 
-        if (window.CUSDIS) {
-          window.CUSDIS.setTheme(newTheme);
-        }
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.addedNodes.length === 0) return;
+      const iframe = mutation.addedNodes[0];
+      if (iframe.tagName !== 'IFRAME') return;
+
+      iframe.addEventListener('load', () => {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const height = doc.documentElement.scrollHeight;
+        iframe.style.height = height + 'px';
       });
-    }
+    });
   });
+
+  observer.observe(thread, { childList: true, subtree: true });
+});
 </script>
