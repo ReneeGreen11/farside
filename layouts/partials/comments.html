@@ -33,18 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
       if (iframe.tagName !== 'IFRAME') return;
 
       // Poll until the iframe content has a real height
-      const interval = setInterval(() => {
-        try {
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          const height = doc.documentElement.scrollHeight;
-          if (height > 50) {
-            iframe.style.height = (height + 50) + 'px';
-            clearInterval(interval);
-          }
-        } catch(e) {
-          clearInterval(interval);
-        }
-      }, 100);
+     const interval = setInterval(() => {
+  try {
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+    const height = doc.documentElement.scrollHeight;
+    if (height > 50) {
+      iframe.style.height = (height + 20) + 'px';
+    }
+  } catch(e) {
+    clearInterval(interval);
+  }
+}, 100);
+
+// Stop polling after 5 seconds
+setTimeout(() => clearInterval(interval), 5000);
     });
   });
 
