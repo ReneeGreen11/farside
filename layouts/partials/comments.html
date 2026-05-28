@@ -1,16 +1,26 @@
-
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
-  data-app-id="{{ .Site.Params.cusdisAppId }}"
-  data-page-id="{{ .Permalink }}"
+  data-app-id="9755d201-34dc-4bec-a292-41085ae3418a"
+  data-page-id="{{ .File.UniqueID }}"
   data-page-url="{{ .Permalink }}"
   data-page-title="{{ .Title }}"
-  data-theme="auto"
-></div>
+  data-theme="auto">
+</div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener('load', () => {
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isDark = document.body.classList.contains("dark");
+      const newTheme = isDark ? 'light' : 'dark';
+      if (window.CUSDIS) {
+        window.CUSDIS.setTheme(newTheme);
+      }
+    });
+  }
+
   const thread = document.getElementById("cusdis_thread");
   if (!thread) return;
 
