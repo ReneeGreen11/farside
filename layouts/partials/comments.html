@@ -20,36 +20,21 @@ window.addEventListener('load', () => {
       }
     });
   }
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-  const thread = document.getElementById("cusdis_thread");
-  if (!thread) return;
-
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.addedNodes.length === 0) return;
-      const iframe = mutation.addedNodes[0];
-      if (iframe.tagName !== 'IFRAME') return;
-
-      // Poll until the iframe content has a real height
-     const interval = setInterval(() => {
-  try {
-    const doc = iframe.contentDocument || iframe.contentWindow.document;
-    const height = doc.documentElement.scrollHeight;
-    if (height > 50) {
-      iframe.style.height = (height + 20) + 'px';
+  const interval = setInterval(() => {
+    const iframe = document.querySelector("#cusdis_thread iframe");
+    if (!iframe) return;
+    try {
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      const height = doc.documentElement.scrollHeight;
+      if (height > 50) {
+        iframe.style.height = (height + 20) + 'px';
+      }
+    } catch(e) {
+      clearInterval(interval);
     }
-  } catch(e) {
-    clearInterval(interval);
-  }
-}, 100);
+  }, 100);
 
-// Stop polling after 5 seconds
-setTimeout(() => clearInterval(interval), 5000);
-    });
-  });
-
-  observer.observe(thread, { childList: true, subtree: true });
+  setTimeout(() => clearInterval(interval), 5000);
 });
 </script>
