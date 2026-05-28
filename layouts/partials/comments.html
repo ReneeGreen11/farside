@@ -32,11 +32,19 @@ document.addEventListener("DOMContentLoaded", function() {
       const iframe = mutation.addedNodes[0];
       if (iframe.tagName !== 'IFRAME') return;
 
-      iframe.addEventListener('load', () => {
-        const doc = iframe.contentDocument || iframe.contentWindow.document;
-        const height = doc.documentElement.scrollHeight;
-        iframe.style.height = height + 'px';
-      });
+      // Poll until the iframe content has a real height
+      const interval = setInterval(() => {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          const height = doc.documentElement.scrollHeight;
+          if (height > 50) {
+            iframe.style.height = height + 'px';
+            clearInterval(interval);
+          }
+        } catch(e) {
+          clearInterval(interval);
+        }
+      }, 100);
     });
   });
 
